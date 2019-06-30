@@ -13,7 +13,7 @@ resource "aws_lambda_function" "morsefunction" {
   function_name = "MorseTF"
 
   # The bucket name as created earlier with "aws s3api create-bucket"
-  s3_bucket = "terraform-serverless-storage"
+  s3_bucket = "terraform-serverless-storage-${var.aws_region}"
   s3_key    = "v${var.app_version}/index.zip"
 
   # "main" is the filename within the zip file (main.js) and "handler"
